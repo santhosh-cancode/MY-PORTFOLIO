@@ -32,8 +32,8 @@ function App() {
       </main>
 
       <footer className="footer border-t border-white/10 mt-20 p-8 text-center text-gray-400">
-        <p>&copy; {new Date().getFullYear()} Santhosh S. All Rights Reserved.</p>
-        <p className="mt-2 text-sm text-gray-500">MCA Pursuing | Software Developer | Thanjavur</p>
+        <p>&copy; {new Date().getFullYear()} Santhosh S.</p>
+        <p className="mt-2 text-sm text-gray-500">MCA Pursuing | Web Developer | Thanjavur</p>
       </footer>
     </div>
   );
