@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -7,18 +7,35 @@ import Contact from './components/Contact';
 import './App.css';
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isMenuOpen]);
+
   return (
     <div className="App">
       {/* Navigation */}
-      <nav className="navbar">
+      <nav className={`navbar ${isMenuOpen ? 'menu-open' : ''}`}>
         <div className="nav-container">
           <div className="logo">Santhosh<span>.S</span></div>
-          <ul className="nav-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Work</a></li>
-            <li><a href="#contact">Contact</a></li>
+          
+          <div className="menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
+            <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
+            <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
+          </div>
+
+          <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
+            <li><a href="#hero" onClick={() => setIsMenuOpen(false)}>Home</a></li>
+            <li><a href="#about" onClick={() => setIsMenuOpen(false)}>About</a></li>
+            <li><a href="#experience" onClick={() => setIsMenuOpen(false)}>Experience</a></li>
+            <li><a href="#projects" onClick={() => setIsMenuOpen(false)}>Work</a></li>
+            <li><a href="#contact" onClick={() => setIsMenuOpen(false)}>Contact</a></li>
           </ul>
         </div>
       </nav>
