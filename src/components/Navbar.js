@@ -5,6 +5,7 @@ import {
   IconCode,
   IconGraduationCap,
   IconBriefcase,
+  IconAward,
   IconFolder,
   IconMail
 } from './Icons';
@@ -17,7 +18,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      const sections = ['hero', 'about', 'skills', 'education', 'experience', 'projects', 'contact'];
+      const sections = ['hero', 'about', 'skills', 'education', 'experience', 'certificates', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -43,6 +44,7 @@ const Navbar = () => {
     { name: 'Skills', href: '#skills', id: 'skills', icon: <IconCode size={18} /> },
     { name: 'Education', href: '#education', id: 'education', icon: <IconGraduationCap size={18} /> },
     { name: 'Experience', href: '#experience', id: 'experience', icon: <IconBriefcase size={18} /> },
+    { name: 'Certificates', href: '#certificates', id: 'certificates', icon: <IconAward size={18} /> },
     { name: 'Projects', href: '#projects', id: 'projects', icon: <IconFolder size={18} /> },
     { name: 'Contact', href: '#contact', id: 'contact', icon: <IconMail size={18} /> },
   ];
